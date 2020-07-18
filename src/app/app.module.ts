@@ -10,6 +10,7 @@ import { StarComponent } from './shared/star/star.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     StarComponent,
     RegisterUserComponent,
     AddUserComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
