@@ -1,0 +1,47 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName" required />
+  </label>
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName" />
+  </label>
+  <div formGroupName="address">
+    <h3>Address</h3>
+
+    <label>
+      city:
+      <input type="text" formControlName="city" />
+    </label>
+    <label>
+      state:
+      <input type="text" formControlName="state" />
+    </label>
+    <label>
+      country:
+      <input type="text" formControlName="country" />
+    </label>
+  </div>
+
+  <div formArrayName="roles">
+    <h3>Roles</h3>
+    <button (click)="addRoles()">Add Roles</button>
+    <div *ngFor="let role of roles.controls; let i = index">
+      <label>
+        Role {{ i }}:
+        <input type="text" [formControlName]="i" />
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>
+<p>
+  <button (click)="updateUser()">Update User</button>
+</p>
+<p>
+  Valid: {{ userForm.valid }}, InValid: {{ userForm.invalid }}, Dirty:
+  {{ userForm.dirty }}, Pristine: {{ userForm.pristine }}, Touched:
+  {{ userForm.touched }}, Un-Touched: {{ userForm.untouched }}
+</p>
