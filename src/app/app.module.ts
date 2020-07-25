@@ -8,20 +8,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpaceConverterPipe } from './shared/space-converter.pipe';
 import { StarComponent } from './shared/star/star.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterUserComponent } from './register-user/register-user.component';
+import { RegisterUserComponent } from './admin/register-user/register-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailComponent } from './admin/user-detail/user-detail.component';
+import { AdminModule } from './admin/admin.module';
+import { UserListModule } from './user-list/user-list.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserListComponent,
-    SpaceConverterPipe,
-    StarComponent,
-    RegisterUserComponent,
-    AddUserComponent,
-    UserDetailComponent,
-  ],
+  declarations: [AppComponent, AddUserComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

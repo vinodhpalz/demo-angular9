@@ -1,10 +1,14 @@
 <nav class="navbar navbar-expand navbar-light">
   <a class="navbar-brand">{{ pageTitle }}</a>
   <ul class="nav nav-pills">
-    <li><a class="nav-link" [routerLink]="['/user-list']">User List</a></li>
+    <li>
+      <a class="nav-link" [routerLink]="['/user/user-list']">User List</a>
+    </li>
     <li><a class="nav-link" [routerLink]="['/add-user']">Add User</a></li>
     <li>
-      <a class="nav-link" [routerLink]="['/register-user']">Register User</a>
+      <a class="nav-link" [routerLink]="['/admin/register-user']"
+        >Register User</a
+      >
     </li>
   </ul>
 </nav>

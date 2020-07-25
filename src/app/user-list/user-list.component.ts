@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from './user';
 import { UserService } from './user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -16,7 +17,10 @@ export class UserListComponent implements OnInit {
   filteredUsers: IUser[];
   users: IUser[];
   errorMessage: string;
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private activateRoute: ActivatedRoute
+  ) {}
 
   get searchFilter(): string {
     return this._searchFilter;
@@ -41,15 +45,17 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe({
-      next: (users) => {
-        this.users = users;
-        this.filteredUsers = this.users;
-      },
-      error: (err) => (this.errorMessage = err),
-    });
+    this.users = this.activateRoute.snapshot.data['data'];
+    this.filteredUsers = this.users;
+    // this.userService.getUsers().subscribe({
+    //   next: (users) => {
+    //     this.users = users;
+    //     this.filteredUsers = this.users;
+    //   },
+    //   error: (err) => (this.errorMessage = err),
+    // });
 
-    console.log(`${this.pageTitle} ngOnInit is triggered`);
+    // console.log(`${this.pageTitle} ngOnInit is triggered`);
   }
 
   onNotify(message: string): void {

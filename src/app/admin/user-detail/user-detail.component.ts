@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '../user-list/user';
+import { IUser } from '../../user-list/user';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
