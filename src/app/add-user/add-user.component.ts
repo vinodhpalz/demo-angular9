@@ -6,6 +6,7 @@ import { User } from '../user-list/user';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css'],
 })
+// Build release comment
 export class AddUserComponent implements OnInit {
   roles = ['Admin User', 'Team Lead', 'Manager'];
   user = new User(
