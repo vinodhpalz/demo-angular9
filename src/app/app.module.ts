@@ -13,6 +13,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 import { AdminModule } from './admin/admin.module';
 import { UserListModule } from './user-list/user-list.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, AddUserComponent],
@@ -22,6 +23,7 @@ import { UserListModule } from './user-list/user-list.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   exports: [],
